@@ -82,8 +82,10 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--ocre); outline-
 .resumen dt { color: var(--suave); }
 .resumen dd { margin: 0; font-weight: 500; }
 
-.react-datepicker { border: 0 !important; font-family: inherit !important; }
+.react-datepicker { border: 0 !important; font-family: inherit !important; font-size: .78rem !important; }
 .react-datepicker__header { background: transparent !important; border: 0 !important; }
+.react-datepicker__current-month { font-size: .9rem !important; }
+.react-datepicker__day-name, .react-datepicker__day { width: 1.8rem; line-height: 1.8rem; margin: .1rem; }
 .react-datepicker__day--in-range, .react-datepicker__day--selected, .react-datepicker__day--range-start, .react-datepicker__day--range-end {
   background: var(--pino) !important; color: #fff !important;
 }
