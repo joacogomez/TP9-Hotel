@@ -15,6 +15,5 @@ npm run dev
 ```
 
 ## Deploy en Vercel
-1. Subir el proyecto a un repositorio de GitHub.
-2. En vercel.com → *Add New Project* → importar el repositorio.
-3. Vercel detecta Vite solo (build: `npm run build`, output: `dist`). Click en *Deploy*.
+
+https://tp9-hotel.vercel.app/#nosotros
