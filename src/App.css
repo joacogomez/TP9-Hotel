@@ -1,0 +1,101 @@
+:root {
+  --fondo: #f1f3ef;
+  --tinta: #15251f;
+  --pino: #1f4d43;
+  --pino-oscuro: #12332c;
+  --ocre: #c79a3b;
+  --linea: #d5dbd4;
+  --suave: #5c6b64;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--tinta);
+  font-family: "Instrument Sans", system-ui, sans-serif;
+  line-height: 1.55;
+}
+h1, h2, h3, .logo { font-family: "Fraunces", Georgia, serif; line-height: 1.1; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--ocre); outline-offset: 2px; }
+
+.header {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  padding: .9rem clamp(1rem, 5vw, 4rem);
+  background: var(--fondo); border-bottom: 1px solid var(--linea);
+}
+.logo { font-size: 1.35rem; font-weight: 700; color: var(--pino); text-decoration: none; }
+.header nav { display: flex; align-items: center; gap: 1.4rem; }
+.header nav a { color: var(--tinta); text-decoration: none; font-weight: 500; }
+.header nav a:hover { color: var(--pino); }
+.nav-cta { background: var(--pino); color: #fff !important; padding: .45rem 1rem; border-radius: 999px; }
+
+.boton {
+  display: inline-block; border: 0; cursor: pointer; text-decoration: none;
+  background: var(--pino); color: #fff; font: 600 1rem "Instrument Sans", sans-serif;
+  padding: .8rem 1.5rem; border-radius: 8px;
+}
+.boton:hover { background: var(--pino-oscuro); }
+
+.inicio {
+  display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 2rem;
+  padding: clamp(2rem, 6vw, 5rem) clamp(1rem, 5vw, 4rem);
+  min-height: 78vh;
+}
+.inicio h1 { font-size: clamp(2.2rem, 5vw, 4rem); margin: 0 0 1.2rem; letter-spacing: -.01em; }
+.inicio p { max-width: 46ch; color: var(--suave); font-size: 1.1rem; margin: 0 0 1.8rem; }
+.inicio-arte {
+  position: relative; height: 420px; border-radius: 16px; overflow: hidden;
+  background: linear-gradient(#f3d9a4, #f1e7d0 60%);
+}
+.inicio-arte img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+.seccion { padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1rem, 5vw, 4rem); border-top: 1px solid var(--linea); }
+.seccion h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin: 0 0 1rem; }
+.sub { color: var(--suave); margin: 0 0 2rem; }
+
+.nosotros-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: start; }
+.nosotros p { max-width: 60ch; font-size: 1.1rem; margin: 0; }
+.datos { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--linea); }
+.datos li { padding: .8rem 0; border-bottom: 1px solid var(--linea); display: flex; justify-content: space-between; gap: 1rem; }
+
+.habitaciones { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+.habitacion {
+  display: flex; flex-direction: column; text-align: left; padding: 0; overflow: hidden;
+  background: #fff; border: 2px solid var(--linea); border-radius: 12px; cursor: pointer; font: inherit; color: inherit;
+  transition: border-color .15s, transform .15s;
+}
+.habitacion:hover { border-color: var(--pino); }
+.habitacion.activa { border-color: var(--ocre); box-shadow: 0 0 0 3px rgba(199, 154, 59, .3); }
+.habitacion .foto { height: 110px; width: 100%; display: block; object-fit: cover; }
+.habitacion .info { display: flex; flex-direction: column; gap: .2rem; padding: 1rem; }
+.habitacion .detalle { color: var(--suave); font-size: .92rem; }
+.habitacion .precio { margin-top: .5rem; font-weight: 600; color: var(--pino); }
+.habitacion small { color: var(--suave); font-weight: 400; }
+
+.panel { display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: start; }
+.calendario { background: #fff; padding: 1rem; border-radius: 12px; border: 1px solid var(--linea); overflow-x: auto; }
+.resumen { background: #fff; padding: 1.5rem; border-radius: 12px; border: 1px solid var(--linea); }
+.resumen h3 { margin: 0 0 1rem; font-size: 1.4rem; }
+.resumen dl { margin: 0 0 1.5rem; display: grid; grid-template-columns: auto 1fr; gap: .5rem 1rem; }
+.resumen dt { color: var(--suave); }
+.resumen dd { margin: 0; font-weight: 500; }
+
+.react-datepicker { border: 0 !important; font-family: inherit !important; }
+.react-datepicker__header { background: transparent !important; border: 0 !important; }
+.react-datepicker__day--in-range, .react-datepicker__day--selected, .react-datepicker__day--range-start, .react-datepicker__day--range-end {
+  background: var(--pino) !important; color: #fff !important;
+}
+.react-datepicker__day--in-selecting-range { background: var(--ocre) !important; color: #fff !important; }
+
+.footer { padding: 2rem clamp(1rem, 5vw, 4rem); border-top: 1px solid var(--linea); color: var(--suave); font-size: .9rem; }
+
+@media (max-width: 860px) {
+  .inicio, .nosotros-grid, .panel { grid-template-columns: 1fr; }
+  .inicio-arte { height: 260px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
