@@ -13,7 +13,7 @@ export default function App() {
         <Reservas />
       </main>
       <footer className="footer">
-        <p>Hotel Cerro Alto · Salta, Argentina · Trabajo Práctico N°9 – Lenguaje IV</p>
+        <p>Hotel Cerro Alto · Salta, Argentina · Trabajo Práctico N°9 – Lenguajes IV - Gómez Burgos, Joaquín</p>
       </footer>
     </>
   );
